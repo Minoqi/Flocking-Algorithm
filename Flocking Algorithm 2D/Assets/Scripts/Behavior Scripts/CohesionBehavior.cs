@@ -7,22 +7,24 @@ public class CohesionBehavior : FlockBehavior
 {
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
-        //if no neighbors return no adjustment
+        // If no neighbors, return 0
         if (context.Count == 0)
         {
             return Vector2.zero;
         }
 
-        // add all points togehter and average
+        // Add all points together and average
         Vector2 cohesionMove = Vector2.zero;
+
         foreach(Transform item in context)
         {
-            cohesionMove += (Vector2)item.position;
+            cohesionMove += (Vector2)item.position; // Add all points
         }
-        cohesionMove /= context.Count;
+        cohesionMove /= context.Count; // Average point
 
-        // create offset from agent position
+        // Create offset from agent position
         cohesionMove -= (Vector2)agent.transform.position;
+
         return cohesionMove;
     }
 }
