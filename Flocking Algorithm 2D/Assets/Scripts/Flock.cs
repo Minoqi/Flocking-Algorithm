@@ -8,7 +8,6 @@ public class Flock : MonoBehaviour
     public FlockAgent agentPrefab;
     List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehavior behavior;
-    SpriteRenderer renderer;
 
     [Range(10, 500)]
     public int startingCount = 20;
@@ -50,7 +49,6 @@ public class Flock : MonoBehaviour
         foreach(FlockAgent agent in agents)
         {
             List<Transform> context = GetNearbyObjects(agent);
-            //agent.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
 
             Vector2 move = behavior.CalculateMove(agent, context, this);
             move *= driveFactor;
