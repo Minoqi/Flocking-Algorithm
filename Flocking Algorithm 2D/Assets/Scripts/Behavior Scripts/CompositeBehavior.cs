@@ -17,17 +17,17 @@ public class CompositeBehavior : FlockBehavior
             return Vector2.zero;
         }
 
-        // set up move
+        // Set up move
         Vector2 move = Vector2.zero;
 
-        // ietrate through behaviors
+        // Iterate through behaviors
         for(int i = 0; i < behaviors.Length; i++)
         {
-            Vector2 partialMove = behaviors[i].CalculateMove(agent, context, flock) * weights[i];
+            Vector2 partialMove = behaviors[i].CalculateMove(agent, context, flock) * weights[i]; // Multply each behavior by it's weight
 
             if (partialMove != Vector2.zero)
             {
-                if (partialMove.sqrMagnitude > weights[i] * weights[i])
+                if (partialMove.sqrMagnitude > weights[i] * weights[i]) // Make sure it doesn't exceed the weight
                 {
                     partialMove.Normalize();
                     partialMove *= weights[i];

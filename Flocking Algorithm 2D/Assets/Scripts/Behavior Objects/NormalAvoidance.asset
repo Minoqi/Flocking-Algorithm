@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f234d7939fa724a8a3eceac2da975e, type: 3}
-  m_Name: SteeredCohesion
+  m_Script: {fileID: 11500000, guid: c7869741c1e84c4468b521be5d116bdd, type: 3}
+  m_Name: NormalAvoidance
   m_EditorClassIdentifier: 
-  filter: {fileID: 11400000, guid: 3707d4dde630c034387ec09fc2f6d918, type: 2}
-  agentSmoothTime: 0.5
+  filter: {fileID: 11400000, guid: 0a34d5f90f3a6604fa10e10b48ed5f34, type: 2}
